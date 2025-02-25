@@ -4,10 +4,10 @@ FROM oven/bun:1.0 as base
 WORKDIR /app
 
 # Copy package.json and other dependency files
-COPY package.json bun.lock ./
+COPY package.json ./
 
 # Install dependencies
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Copy source code
 COPY . .
